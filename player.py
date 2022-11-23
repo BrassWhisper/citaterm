@@ -4,7 +4,8 @@ def init(n):
     list = []
 
     for i in range(n):
-        list.append(player(f"player{i + 1}          ")) 
+        list.append(player(f"player{i + 1}      "))
+
 # Define the class player
 class player:
     def __init__(self, name):

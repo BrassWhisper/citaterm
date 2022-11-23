@@ -1,36 +1,51 @@
+from termcolor import colored
+
 # Function to create the deck of districts
 def init():
     # Create each district
-    tavern           = district("Taverne          ", 1, "green",   "")
-    tradingPost      = district("Échoppe          ", 2, "green",   "")
-    market           = district("Marché           ", 2, "green",   "")
-    docks            = district("Comptoir         ", 3, "green",   "")
-    harbor           = district("Port             ", 4, "green",   "")
-    townHall         = district("Hôtel de Ville   ", 5, "green",   "")
-    temple           = district("Temple           ", 1, "blue",    "")
-    church           = district("Église           ", 2, "blue",    "")
-    monastery        = district("Monastère        ", 3, "blue",    "")
-    cathedral        = district("Cathédrale       ", 5, "blue",    "")
-    watchtower       = district("Tour de Guet     ", 1, "red",     "")
-    prison           = district("Prison           ", 2, "red",     "")
-    battlefield      = district("Caserne          ", 3, "red",     "")
-    fortress         = district("Forteresse       ", 5, "red",     "")
-    manor            = district("Manoir           ", 3, "yellow",  "")
-    castle           = district("Château          ", 4, "yellow",  "")
-    palace           = district("Palais           ", 5, "yellow",  "")
-    hauntedCity      = district("Cour des Miracles", 2, "magenta", "Pour le calcul du score, la Cour des Miracles est considérée comme un quartier de la couleur de votre choix.")
-    keep             = district("Donjon           ", 3, "magenta", "Le Donjon ne peut pas être détruit par le Condottiere.")
-    observatory      = district("Observatoire     ", 4, "magenta", "Si vous choississez de piocher des cartes au début de votre tour, piochez en 3 au lieu de 2. Choisissez-en une et défaussez les 2 autres.")
-    laboratory       = district("Laboratoire      ", 5, "magenta", "Une fois par tour, vous pouvez défausser 1 carte et recevoir 2 pièces d'or.")
-    smithy           = district("Forge            ", 5, "magenta", "Une fois par tour, vous pouvez payer 2 pièces d'or pour piocher 3 cartes.")
-    graveyard        = district("Cimetière        ", 5, "magenta", "Lorsque le Condottiere détruit un quartier, vous pouvez payer 1 pièce d'or pour le prendre dans votre main. Vous ne pouvez pas le faire si vous êtes vous-même Condottiere")
-    imperialTreasure = district("Trésor Impérial  ", 5, "magenta", "A la fin de la partie, marquez 1 point supplémentaire pour chaque pièce d'or dans votre trésor.")
-    mapRoom          = district("Salle des Cartes ", 5, "magenta", "A la fin de la partie, marquez 1 point supplémentaire pour chaque carte dans votre main.")
-    schoolOfMagic    = district("École de Magie   ", 6, "magenta", "Pour la perception des revenues, l'Ecole de Magie est considérée comme un quartier de la couleur de votre choix.")
-    library          = district("Bibliothèque     ", 6, "magenta", "Si vuos choisissez de piocher des cartes au début de votre tour, conservez-les toutes.")
-    greatWall        = district("Grande Muraille  ", 6, "magenta", "Le prix à payer par le Condottiere pour détruire vos autres quartiers est augmenté de 1.")
-    university       = district("Université       ", 6, "magenta", "Coûte 6 pièces d'or à bâtir mais vaut 8 points pour le calcul du score.")
-    dragonGate       = district("Dracoport        ", 6, "magenta", "Coûte 6 pièces d'or à bâtir mais vaut 8 points pour le calcul du score.")
+    tavern           = district(colored("Taverne          ", "green"  ), 1, "green",   1,  "")
+    tradingPost      = district(colored("Échoppe          ", "green"  ), 2, "green",   2,  "")
+    market           = district(colored("Marché           ", "green"  ), 2, "green",   3,  "")
+    docks            = district(colored("Comptoir         ", "green"  ), 3, "green",   4,  "")
+    harbor           = district(colored("Port             ", "green"  ), 4, "green",   5,  "")
+    townHall         = district(colored("Hôtel de Ville   ", "green"  ), 5, "green",   6,  "")
+    temple           = district(colored("Temple           ", "blue"   ), 1, "blue",    7,  "")
+    church           = district(colored("Église           ", "blue"   ), 2, "blue",    8,  "")
+    monastery        = district(colored("Monastère        ", "blue"   ), 3, "blue",    9,  "")
+    cathedral        = district(colored("Cathédrale       ", "blue"   ), 5, "blue",    10, "")
+    watchtower       = district(colored("Tour de Guet     ", "red"    ), 1, "red",     11, "")
+    prison           = district(colored("Prison           ", "red"    ), 2, "red",     12, "")
+    battlefield      = district(colored("Caserne          ", "red"    ), 3, "red",     13, "")
+    fortress         = district(colored("Forteresse       ", "red"    ), 5, "red",     14, "")
+    manor            = district(colored("Manoir           ", "yellow" ), 3, "yellow",  15, "")
+    castle           = district(colored("Château          ", "yellow" ), 4, "yellow",  16, "")
+    palace           = district(colored("Palais           ", "yellow" ), 5, "yellow",  17, "")
+    hauntedCity      = district(colored("Cour des Miracles", "magenta"), 2, "magenta", 18,
+                                "Pour le calcul du score, la Cour des Miracles est considérée comme un quartier de la couleur de votre choix.")
+    keep             = district(colored("Donjon           ", "magenta"), 3, "magenta", 19,
+                                "Le Donjon ne peut pas être détruit par le Condottiere.")
+    observatory      = district(colored("Observatoire     ", "magenta"), 4, "magenta", 20,
+                                "Si vous choississez de piocher des cartes au début de votre tour, piochez en 3 au lieu de 2. Choisissez-en une et défaussez les 2 autres.")
+    laboratory       = district(colored("Laboratoire      ", "magenta"), 5, "magenta", 21,
+                                "Une fois par tour, vous pouvez défausser 1 carte et recevoir 2 pièces d'or.")
+    smithy           = district(colored("Forge            ", "magenta"), 5, "magenta", 22,
+                                "Une fois par tour, vous pouvez payer 2 pièces d'or pour piocher 3 cartes.")
+    graveyard        = district(colored("Cimetière        ", "magenta"), 5, "magenta", 23,
+                                "Lorsque le Condottiere détruit un quartier, vous pouvez payer 1 pièce d'or pour le prendre dans votre main. Vous ne pouvez pas le faire si vous êtes vous-même Condottiere")
+    imperialTreasure = district(colored("Trésor Impérial  ", "magenta"), 5, "magenta", 24,
+                                "A la fin de la partie, marquez 1 point supplémentaire pour chaque pièce d'or dans votre trésor.")
+    mapRoom          = district(colored("Salle des Cartes ", "magenta"), 5, "magenta", 25,
+                                "A la fin de la partie, marquez 1 point supplémentaire pour chaque carte dans votre main.")
+    schoolOfMagic    = district(colored("École de Magie   ", "magenta"), 6, "magenta", 26,
+                                "Pour la perception des revenus, l'Ecole de Magie est considérée comme un quartier de la couleur de votre choix.")
+    library          = district(colored("Bibliothèque     ", "magenta"), 6, "magenta", 27,
+                                "Si vous choisissez de piocher des cartes au début de votre tour, conservez-les toutes.")
+    greatWall        = district(colored("Grande Muraille  ", "magenta"), 6, "magenta", 28,
+                                "Le prix à payer par le Condottiere pour détruire vos autres quartiers est augmenté de 1.")
+    university       = district(colored("Université       ", "magenta"), 6, "magenta", 29,
+                                "Coûte 6 pièces d'or à bâtir mais vaut 8 points pour le calcul du score.")
+    dragonGate       = district(colored("Dracoport        ", "magenta"), 6, "magenta", 30,
+                                "Coûte 6 pièces d'or à bâtir mais vaut 8 points pour le calcul du score.")
     
     # Assign to each district the number of times it has to be in the deck
     deck = {
@@ -80,10 +95,11 @@ def init():
 
 # District class
 class district:
-    def __init__(self, name, cost, color, effect):
+    def __init__(self, name, cost, color, number, effect):
         self.name = name
         self.cost = cost
         self.color = color
+        self.number = number
         self.effect = effect
 
 # Return a list of n cards from the top of the districtDeck and remove them from it
