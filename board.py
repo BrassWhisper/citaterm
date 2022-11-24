@@ -15,7 +15,7 @@ def clear():
 def draw(playerList, nbPlayer, discardList, line, column):
     # Create the pointer to highlight an item of the board
     pointer = []
-    for i in range(12):
+    for i in range(11):
         pointer.append([[]] * nbPlayer)
     
     if line >= 0 and line <= 11 and column >=0 and column <= nbPlayer - 1:
@@ -45,10 +45,7 @@ def draw(playerList, nbPlayer, discardList, line, column):
     screen[26] += ("└" + ("─" * 19 + "┴") * nbPlayer)[:-1] + "┘"
     
     # Add bottom line to screen
-    if ["reverse"] in pointer[11]:
-        screen[termSize[1] - 15] = colored("-" * termSize[0], attrs=["reverse"])
-    else:
-        screen[termSize[1] - 15] = "-" * termSize[0]
+    screen[termSize[1] - 15] = "─" * 59 + "┬" + "─" * (termSize[0] - 140) + "┬" + "─" * 19 + "┬" + "─" * 59 
     # Add players and city to screen
     for j in range(nbPlayer):
         pl = playerList[j]
@@ -64,7 +61,7 @@ def draw(playerList, nbPlayer, discardList, line, column):
         elif char.revealed == False:
             char = " xxxxxxxxxxxxxxxxx "
         else:
-            char = " " + char.name
+            char = " " + char.name + " "
         char = colored(char, attrs=pointer[1][j])
         # Handle number of cards in hand and gold of the player
         handsize = len(playerList[j].hand)
@@ -108,9 +105,9 @@ def loop(plList, nbPlayer, discardList):
     column = 0
     while True:
         draw(plList, nbPlayer, discardList, line, column)
-        sleep(.1)
+        sleep(.2)
         key = keyboard.read_key()
-        if key == "down" and line != 11:
+        if key == "down" and line != 10:
             line += 1
         elif key == "up" and line != 0:
             line -= 1
@@ -118,7 +115,7 @@ def loop(plList, nbPlayer, discardList):
             column += 1
         elif key == "left" and column != 0:
             column -= 1
-        elif key == "enter" and line == 11:
+        elif key == "enter" and line == 10:
             print("\033[1A", end="")
             break
         elif key == "esc":
